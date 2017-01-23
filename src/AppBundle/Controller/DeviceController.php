@@ -3,13 +3,14 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Form\DeviceType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 /**
      * @Route("/devices")
-     * 
+     * @Security("is_granted('ROLE_USER')")
      */
 class DeviceController extends AppController {
 
