@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-success" href="{{path("add_service_category")}}" role="button">افزودن</a>
+         </div>
+    </div>
+            <br>
+    <div class="row">
+        <div class="col-md-9">
+               <table class="tableData display" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>name</th>
+                          
+                          <th>edit</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                {% for service_cetegory in service_cetegories %}
+                    <tr>
+                        <td>{{service_cetegory.name}}</td>
+                       
+                     
+                        <td><a href="{{path("edit_service_category",{id:service_cetegory.id})}}">edit</a></td>
+                    </tr>
+                {% endfor %}
+                  </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

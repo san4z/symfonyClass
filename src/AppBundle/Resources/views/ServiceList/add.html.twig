@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+   <div class="row">
+        <div class="col-md-4">
+            {{ form_start(myform,{'attr': {'novalidate': 'novalidate'}}) }}
+          
+            {{ form_widget(myform) }}
+         
+            
+             <div class="form-group">
+        <input class="btn btn-default" type="submit" value="ثبت" />
+             <a class="btn btn-success" href="{{path("add_service_category")}}" role="button">افزودن دسته</a>
+    </div>
+            {{ form_end(myform) }}
+        </div>
+    </div>
+                <div class="row">
+        <div class="col-md-6">
+            <table class="tableData display" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>serviceNo</th>
+                          <th>hospital</th>
+                          <th>device</th>
+                          <th>edit</th>
+                          <th>delete</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                {% for service in services %}
+                    <tr>
+                        <td>{{service.serviceNo}}</td>
+                        <td>{{service.hospital.name}} - {{service.hospital.city}}</td>
+                        <td>{{service.device.name}} - {{service.device.model}}</td>
+                     
+                        <td><a href="{{path("edit_service",{id:service.id})}}">edit</a></td>
+                        <td><a href="{{path("delete_service",{id:service.id})}}">delete</a></td>
+                    </tr>
+                {% endfor %}
+                  </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+

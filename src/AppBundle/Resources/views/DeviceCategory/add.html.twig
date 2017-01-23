@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+   <div class="row">
+        <div class="col-md-4">
+            {{form_start(myform,{'attr': {'novalidate': 'novalidate'}})}}
+          
+            {{form_widget(myform)}}
+             <div class="form-group">
+        <input class="btn btn-default" type="submit" value="ثبت" />
+    </div>
+            {{form_end(myform)}}
+        </div>
+    </div>
+                <div class="row">
+        <div class="col-md-6">
+            <table class="tableData display" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>name</th>
+                         
+                          <th>edit</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                {% for device_cetegorie in device_cetegories %}
+                    <tr>
+                        <td>{{device_cetegorie.name}}</td>
+                       
+                     
+                        <td><a href="{{path("edit_device_category",{id:device_cetegorie.id})}}">edit</a></td>
+                    </tr>
+                {% endfor %}
+                  </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+

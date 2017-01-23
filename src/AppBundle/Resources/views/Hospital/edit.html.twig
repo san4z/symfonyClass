@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+   <div class="row">
+        <div class="col-md-4">
+            {{form_start(myform,{'attr': {'novalidate': 'novalidate'}})}}
+          
+            {{form_widget(myform)}}
+             <div class="form-group">
+        <input class="btn btn-default" type="submit" value="ویرایش" />
+    </div>
+            {{form_end(myform)}}
+        </div>
+    </div>
+        
+{% endblock %}

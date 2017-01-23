@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-success" href="{{path("add_device_category")}}" role="button">افزودن</a>
+         </div>
+    </div>
+            <br>
+    <div class="row">
+        <div class="col-md-9">
+               <table class="tableData display" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>name</th>
+                          
+                          <th>edit</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                {% for device_cetegorie in device_cetegories %}
+                    <tr>
+                        <td>{{device_cetegorie.name}}</td>
+                       
+                     
+                        <td><a href="{{path("edit_device_category",{id:device_cetegorie.id})}}">edit</a></td>
+                    </tr>
+                {% endfor %}
+                  </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

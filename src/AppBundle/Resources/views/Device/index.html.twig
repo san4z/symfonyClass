@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-success" href="{{path("add_device")}}" role="button">افزودن</a>
+         </div>
+    </div>
+            <br>
+    <div class="row">
+        <div class="col-md-9">
+               <table class="tableData display" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>name</th>
+                          <th>model</th>
+                          <th>stock</th>
+                          <th>edit</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                {% for device in devices %}
+                    <tr>
+                        <td>{{device.name}}</td>
+                        <td>{{device.model}}</td>
+                        <td>{{device.stock}}</td>
+                     
+                        <td><a href="{{path("edit_device",{id:device.id})}}">edit</a></td>
+                    </tr>
+                {% endfor %}
+                  </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

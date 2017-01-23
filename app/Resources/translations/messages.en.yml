@@ -1,0 +1,3 @@
+product:
+    failed.duplicate_sku: Duplicat sku
+    add.successful: Product add succesfully

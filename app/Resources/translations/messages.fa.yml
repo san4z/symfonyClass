@@ -1,0 +1,13 @@
+product:
+    failed.duplicate_sku: sku تکراری است
+    add.successful: محصول اضافه شد
+    delete.succesful: محصول حذف شد
+Invalid credentials.: رمز عبور صحیح نیست
+
+
+Name: نام
+Price: قیمت
+Edit: ویرایش
+
+Firstname: نام
+Lastname: نام خانوادگی

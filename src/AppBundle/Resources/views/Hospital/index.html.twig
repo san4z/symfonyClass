@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-success" href="{{path("add_hospital")}}" role="button">افزودن</a>
+         </div>
+    </div>
+            <br>
+    <div class="row">
+        <div class="col-md-9">
+               <table class="tableData display" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>name</th>
+                          <th>state</th>
+                          <th>city</th>
+                          <th>edit</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                {% for hospital in hospitals %}
+                    <tr>
+                        <td>{{hospital.name}}</td>
+                        <td>{{hospital.state}}</td>
+                        <td>{{hospital.city}}</td>
+                     
+                        <td><a href="{{path("edit_hospital",{id:hospital.id})}}">edit</a></td>
+                    </tr>
+                {% endfor %}
+                  </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
